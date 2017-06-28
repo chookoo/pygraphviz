@@ -91,7 +91,7 @@ else:
         print ("library_dirs=%s"%library_dirs)
         print ("include_dirs=%s"%include_dirs)
         print()
-        raise OSError,"Error locating graphviz."
+        raise OSError("Error locating graphviz.")
 
 print ("library_dirs=%s" % library_dirs)
 print ("include_dirs=%s" % include_dirs)
