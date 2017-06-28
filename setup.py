@@ -20,11 +20,11 @@ from distutils.core import setup, Extension
 from setup_extra import pkg_config, dotneato_config
 
 if sys.argv[-1] == 'setup.py':
-    print "To install, run 'python setup.py install'"
+    print ("To install, run 'python setup.py install'")
     print
 
 if sys.version_info[:2] < (2, 4):
-    print "PyGraphviz requires Python version 2.4 or later (%d.%d detected)." % \
+    print ("PyGraphviz requires Python version 2.4 or later (%d.%d detected).") % \
           sys.version_info[:2]
     sys.exit(-1)
 
