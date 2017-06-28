@@ -61,16 +61,16 @@ if sys.platform == "win32":
 else:
     # Attempt to find Graphviz installation
     if library_dirs is None and include_dirs is None:
-        print "Trying pkg-config"
+        print ("Trying pkg-config")
         include_dirs,library_dirs = pkg_config()
 
     if library_dirs is None and include_dirs is None:
-        print "Trying dotneato-config"
+        print ("Trying dotneato-config")
         include_dirs, library_dirs = dotneato_config()
 
     if library_dirs is None or include_dirs is None:
-        print 
-        print """Your Graphviz installation could not be found.
+        print ()
+        print ("""Your Graphviz installation could not be found.
 
     1) You don't have Graphviz installed:
        Install Graphviz (http://graphviz.org)
@@ -87,14 +87,14 @@ else:
     change the include_dirs and library_dirs variables in setup.py to
     point to the correct locations of your graphviz installation.
 
-    The current setting of library_dirs and include_dirs is:"""
-        print "library_dirs=%s"%library_dirs
-        print "include_dirs=%s"%include_dirs
-        print
+    The current setting of library_dirs and include_dirs is:""")
+        print ("library_dirs=%s"%library_dirs)
+        print ("include_dirs=%s"%include_dirs)
+        print()
         raise OSError,"Error locating graphviz."
 
-print "library_dirs=%s" % library_dirs
-print "include_dirs=%s" % include_dirs
+print ("library_dirs=%s" % library_dirs)
+print ("include_dirs=%s" % include_dirs)
 
 if library_dirs:
     library_dirs = [library_dirs]
