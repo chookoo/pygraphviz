@@ -3438,7 +3438,7 @@ SWIGINTERN PyObject *_wrap_agread(PyObject *SWIGUNUSEDPARM(self), PyObject *args
       PyErr_SetString(PyExc_TypeError, "not a file handle");
       return NULL;
     }
-    arg1 = PyFile_AsFile(obj0);
+    arg1 = FILE* py3c_PyFile_AsFileWithMode(obj0);
   }
   res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_Agdisc_t, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
@@ -3470,8 +3470,8 @@ SWIGINTERN PyObject *_wrap_agwrite(PyObject *SWIGUNUSEDPARM(self), PyObject *arg
   }
   arg1 = (Agraph_t *)(argp1);
   {
-    if (!PyFile_Check(obj1)) {
-      PyErr_SetString(PyExc_TypeError, "not a file handle");
+    /*if (!PyFile_Check(obj1)) {
+      PyErr_SetString(PyExc_TypeError, "not a file handle");*/
       return NULL;
     }
     arg2 = PyFile_AsFile(obj1);
